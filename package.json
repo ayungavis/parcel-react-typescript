@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "author": "Wahyu Kurniawan",
   "license": "MIT",
+  "homepage": "https://ayungavis.github.io/parcel-react-typescript",
   "scripts": {
-    "dev": "parcel public/index.html",
-    "build": "rm -rf dist && parcel build public/index.html --public-url . --no-source-maps",
+    "clean": "rm -rf dist .parcel-cache",
+    "dev": "yarn clean && yarn static && parcel src/index.html",
+    "build": "yarn static && parcel build src/index.html --public-url ./ --no-cache --no-source-maps",
+    "static": "rm -rf dist && mkdir dist && cp -a ./public/* ./dist",
     "check": "tsc --noEmit",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d dist"
@@ -32,5 +35,8 @@
     "parcel-resolver-typescript-module": "^0.1.8",
     "process": "^0.11.10",
     "typescript": "^4.9.5"
-  }
+  },
+  "browserslist": [
+    "last 2 Chrome versions"
+  ]
 }
