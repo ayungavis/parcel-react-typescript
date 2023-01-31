@@ -6,7 +6,7 @@ export const App = () => {
     <ChakraProvider>
       <VStack>
         <h2>Chakra UI</h2>
-        <HStack>
+        <HStack spacing={2}>
           <Button variant="ghost">Ghost</Button>
           <Button>Primary</Button>
         </HStack>
