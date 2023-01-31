@@ -1,13 +1,15 @@
 import React from "react";
-import { Button, ChakraProvider, VStack } from "@chakra-ui/react";
+import { Button, ChakraProvider, HStack, VStack } from "@chakra-ui/react";
 
 export const App = () => {
   return (
     <ChakraProvider>
-      <h1>Hello world!</h1>
       <VStack>
         <h2>Chakra UI</h2>
-        <Button>Test</Button>
+        <HStack>
+          <Button variant="ghost">Ghost</Button>
+          <Button>Primary</Button>
+        </HStack>
       </VStack>
     </ChakraProvider>
   );
